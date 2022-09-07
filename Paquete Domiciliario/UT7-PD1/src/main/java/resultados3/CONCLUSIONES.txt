@@ -1,0 +1,19 @@
+
+Insercion directa para 300 asc
+
+Shellsort para conjuntos chicos desc hasta 1000
+
+Quicksort para conjuntos grandes
+
+Burbuja, totalmente descartado
+Seleccion directa, descartado
+
+Si queremos estabilidad,es importante.
+descartar los metodos inestables
+
+ESTABLE
+Insercion directa, burbuja
+
+INESTABLE
+Quicksort, Heapsort, Shellsort, Seleccion directa
+
