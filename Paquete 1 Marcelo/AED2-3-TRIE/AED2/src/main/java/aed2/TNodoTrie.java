@@ -7,6 +7,7 @@ public class TNodoTrie {
     private static final int CANT_CHR_ABECEDARIO = 26;
     private TNodoTrie[] hijos;
     private boolean esPalabra;
+    
     private int ocurrencias;
     private LinkedList<Integer> paginas = new LinkedList<>();
 
@@ -56,6 +57,9 @@ public class TNodoTrie {
         }
     }
 
+    /**
+     * Imprimir.
+     */
     public void imprimir() {
         imprimir("", this);
     }

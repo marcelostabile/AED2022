@@ -40,6 +40,10 @@ public class TArbolTrie {
         return 0;
     }
     
+    /**
+     * Insertar linea de un archivo en el trie.
+     * @param linea 
+     */
     public void insertarPaginas(String linea) {
         if (raiz == null) {
             raiz = new TNodoTrie();
@@ -47,19 +51,27 @@ public class TArbolTrie {
         raiz.insertarPaginas(linea);
     }
     
+    /**
+     * Imprime las palabras del trie.
+     */
     public void imprimirPaginas() {
         if (raiz != null) {
             raiz.imprimirPaginas();
         }
     }
     
-    public LinkedList <String> predecir (String unPrefijo){
-        LinkedList <String> lista = new LinkedList<>();
+    /**
+     * Recibe un prefijo y retorna una lista 
+     * con todas las palabras que contienen este prefijo.
+     * @param unPrefijo
+     * @return 
+     */
+    public LinkedList<String> predecir(String unPrefijo) {
+        LinkedList<String> lista = new LinkedList<>();
         if (raiz != null){
             raiz.predecir (unPrefijo, lista);
         }
         return lista;
     }
-}
 
-    
+}
