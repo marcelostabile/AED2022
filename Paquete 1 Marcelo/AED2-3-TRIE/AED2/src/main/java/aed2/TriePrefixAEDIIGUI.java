@@ -1,6 +1,6 @@
 package aed2;
 
-import aed2.archivos.ManejadorArchivosGenerico;
+import aed2.archivos.*;
 import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -23,8 +23,9 @@ public class TriePrefixAEDIIGUI extends javax.swing.JFrame {
      * Creates new form TriePrefixAEDIIGUI
      */
     public TriePrefixAEDIIGUI() {
-        this.trie = new TArbolTrie();        
-        String[] palabras = ManejadorArchivosGenerico.leerArchivo("src\\trie\\palabras1.txt");
+        this.trie = new TArbolTrie();
+        String directorio = "src\\main\\java\\aed2\\archivos\\";        
+        String[] palabras = ManejadorArchivosGenerico.leerArchivo(directorio + "palabras1.txt");
         for (String p : palabras) {
                 trie.insertar(p);
         }
