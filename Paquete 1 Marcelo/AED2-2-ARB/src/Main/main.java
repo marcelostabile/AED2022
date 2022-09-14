@@ -1,4 +1,6 @@
-package trie;
+package Main;
+
+import java.util.LinkedList;
 
 public class main {
 
@@ -45,11 +47,25 @@ public class main {
         /* TRIE PAGINAS */
         /****************/
         System.out.print("\n");
-        String[] lineasArchivo2 = ManejadorArchivosGenerico.leerArchivo("src\\trie\\palabras_paginas.txt");
+        String[] lineasArchivo2 = ManejadorArchivosGenerico.leerArchivo("src\\trie\\palabras-paginas.txt");
         TArbolTrie trieArchivo2 = new TArbolTrie();
         for (String i:lineasArchivo2){
             trieArchivo2.insertarPaginas(i);
         }
-        trieArchivo2.imprimirPaginas();
+        //trieArchivo2.imprimirPaginas();
+        
+        LinkedList <String> lista = trieArchivo2.predecir ("ala");
+        LinkedList <String> lista2 = trieArchivo2.predecir ("pepe");
+        System.out.println(lista.toString());
+        System.out.println(lista2.toString());
+        
+        String[] lineasPredecir = ManejadorArchivosGenerico.leerArchivo("src\\trie\\palabras1.txt");
+        TArbolTrie triePredecir = new TArbolTrie();
+        for (String j : lineasPredecir){
+            triePredecir.insertar(j);
+        }
+        triePredecir.imprimir();
+        System.out.println(triePredecir.predecir("ar").toString());
+        System.out.println(triePredecir.predecir("po").toString());
     }
 }

@@ -1,4 +1,6 @@
-package trie;
+package Main;
+
+import java.util.LinkedList;
 
 public class TArbolTrie {
 
@@ -49,6 +51,14 @@ public class TArbolTrie {
         if (raiz != null) {
             raiz.imprimirPaginas();
         }
+    }
+    
+    public LinkedList <String> predecir (String unPrefijo){
+        LinkedList <String> lista = new LinkedList<>();
+        if (raiz != null){
+            raiz.predecir (unPrefijo, lista);
+        }
+        return lista;
     }
 }
 

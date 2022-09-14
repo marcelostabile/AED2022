@@ -1,4 +1,4 @@
-package trie;
+package aed2;
 
 import java.util.LinkedList;
 
@@ -91,14 +91,14 @@ public class TNodoTrie {
     
         public void insertarPaginas(String linea) {
         TNodoTrie nodo = this;
-        
+
         String [] info_pag = linea.split(",");
         String palabra = info_pag[0];
         LinkedList<Integer> lista_pag = new LinkedList<>(); 
         
         //Armo la lista paginas
         for (Integer i = 1 ; i< info_pag.length; i++){
-            lista_pag.add(Integer.parseInt(info_pag[i]));
+            lista_pag.add(Integer.parseInt(info_pag[i].trim()));
         }
                 
         for (int c = 0; c < palabra.length(); c++) {
@@ -134,6 +134,41 @@ public class TNodoTrie {
 
     public void imprimirPaginas() {
         imprimirPaginas("", this);
+    }
+    
+    public TNodoTrie buscarNodo (String prefijo){
+         TNodoTrie nodo = this;
+
+        for (int c = 0; c < prefijo.length(); c++) {
+            // indice del caracter buscado.
+            int indiceCaracter = prefijo.charAt(c) - 'a';
+            // si no existe el siguiente caracter, salimos retornando cero.
+            if (nodo.hijos[indiceCaracter] == null) {
+                return null;
+            }
+            // Existe la siguiente letra, asignamos el hijo como nodo actual.
+            nodo = nodo.hijos[indiceCaracter];
+        }
+        return nodo;
+    }
+    
+    public LinkedList<String> predecir (String prefijo, LinkedList<String> lista){
+        TNodoTrie nodo = buscarNodo(prefijo);
+        return predecirHijos(nodo, prefijo, lista);
+    }
+    
+    private LinkedList<String> predecirHijos (TNodoTrie nodo, String prefijo, LinkedList<String> lista){
+        if (nodo != null) {
+            if (nodo.esPalabra) {
+                lista.add(prefijo);
+            }
+            for (int c = 0; c < CANT_CHR_ABECEDARIO; c++) {
+                if (nodo.hijos[c] != null) {
+                    predecirHijos(nodo.hijos[c], prefijo + (char) (c + 'a'), lista);
+                }
+            }
+        }
+        return lista;
     }
     
 }

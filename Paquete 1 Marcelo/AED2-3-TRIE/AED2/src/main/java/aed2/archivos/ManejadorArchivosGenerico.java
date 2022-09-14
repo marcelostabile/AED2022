@@ -1,4 +1,4 @@
-package trie;
+package aed2.archivos;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
