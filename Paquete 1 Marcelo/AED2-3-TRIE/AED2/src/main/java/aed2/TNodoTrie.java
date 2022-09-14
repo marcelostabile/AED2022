@@ -72,7 +72,6 @@ public class TNodoTrie {
      * @return cantidad de letras encontradas.
      */
     public int buscar(String unaPalabra) {
-
         // nodoActual.
         TNodoTrie nodo = this;
         // recorremos la palabra.
@@ -93,18 +92,21 @@ public class TNodoTrie {
         }
     }
     
-        public void insertarPaginas(String linea) {
+    /**
+     * Insertar las palabras en el trie.
+     * @param linea 
+     */
+    public void insertarPaginas(String linea) {
         TNodoTrie nodo = this;
-
-        String [] info_pag = linea.split(",");
+        // Tomar la linea y extraer la palabra.
+        String[] info_pag = linea.split(",");
         String palabra = info_pag[0];
-        LinkedList<Integer> lista_pag = new LinkedList<>(); 
-        
-        //Armo la lista paginas
-        for (Integer i = 1 ; i< info_pag.length; i++){
+        LinkedList<Integer> lista_pag = new LinkedList<>();
+        //Armo la lista páginas.
+        for (Integer i = 1; i < info_pag.length; i++) {
             lista_pag.add(Integer.parseInt(info_pag[i].trim()));
         }
-                
+        // Ingreso de la palabra.
         for (int c = 0; c < palabra.length(); c++) {
             int indice = palabra.charAt(c) - 'a';
             if (nodo.hijos[indice] == null) {
@@ -113,16 +115,22 @@ public class TNodoTrie {
             nodo = nodo.hijos[indice];
         }
         if (nodo.esPalabra == true) {
-            for (Integer j: lista_pag)
-            nodo.paginas.add(j);
-        } 
-        else {
+            for (Integer j : lista_pag) {
+                nodo.paginas.add(j);
+            }
+        } else {
             nodo.esPalabra = true;
-            for (Integer j: lista_pag)
-            nodo.paginas.add(j);
+            for (Integer j : lista_pag) {
+                nodo.paginas.add(j);
+            }
         }
     }
     
+    /**
+     * Imprimir las palabras.
+     * @param s
+     * @param nodo 
+     */
     private void imprimirPaginas(String s, TNodoTrie nodo) {
         if (nodo != null) {
             if (nodo.esPalabra) {
@@ -140,6 +148,11 @@ public class TNodoTrie {
         imprimirPaginas("", this);
     }
     
+    /**
+     * Buscar el nodo según el prefijo recibido.
+     * @param prefijo
+     * @return 
+     */
     public TNodoTrie buscarNodo (String prefijo){
          TNodoTrie nodo = this;
 
@@ -155,13 +168,20 @@ public class TNodoTrie {
         }
         return nodo;
     }
-    
-    public LinkedList<String> predecir (String prefijo, LinkedList<String> lista){
+
+    /**
+     * Recibe un prefijo y retorna una lista 
+     * con todas las palabras que contienen este prefijo.
+     * @param prefijo
+     * @param lista
+     * @return la lista.
+     */
+    public LinkedList<String> predecir(String prefijo, LinkedList<String> lista) {
         TNodoTrie nodo = buscarNodo(prefijo);
         return predecirHijos(nodo, prefijo, lista);
     }
-    
-    private LinkedList<String> predecirHijos (TNodoTrie nodo, String prefijo, LinkedList<String> lista){
+
+    private LinkedList<String> predecirHijos(TNodoTrie nodo, String prefijo, LinkedList<String> lista) {
         if (nodo != null) {
             if (nodo.esPalabra) {
                 lista.add(prefijo);
