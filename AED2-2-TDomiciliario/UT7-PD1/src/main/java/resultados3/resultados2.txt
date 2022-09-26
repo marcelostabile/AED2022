@@ -1,0 +1,210 @@
+cd C:\AED2\Tareas Domiciliarias\UT7-PD1; JAVA_HOME=C:\\Users\\Marcelo\\AppData\\Local\\Programs\\AdoptOpenJDK\\jdk-11.0.10.9-hotspot cmd /c "\"C:\\Program Files\\NetBeans-14\\netbeans\\java\\maven\\bin\\mvn.cmd\" -Dexec.vmArgs= \"-Dexec.args=${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}\" -Dexec.appArgs= -Dexec.mainClass=clasificador.Main -Dexec.executable=C:\\Users\\Marcelo\\AppData\\Local\\Programs\\AdoptOpenJDK\\jdk-11.0.10.9-hotspot\\bin\\java.exe \"-Dmaven.ext.class.path=C:\\Program Files\\NetBeans-14\\netbeans\\java\\maven-nblib\\netbeans-eventspy.jar\" -Dfile.encoding=UTF-8 org.codehaus.mojo:exec-maven-plugin:3.0.0:exec"
+Running NetBeans Compile On Save execution. Phase execution is skipped and output directories of dependency projects (with Compile on Save turned on) will be used instead of their jar artifacts.
+Scanning for projects...
+
+---------------------------< UT7PD1:UT7-PD1 >---------------------------
+Building UT7-PD1 1.0-SNAPSHOT
+--------------------------------[ jar ]---------------------------------
+
+--- exec-maven-plugin:3.0.0:exec (default-cli) @ UT7-PD1 ---
+
++--------------------+
+| OBTENIENDO MEDIDAS |
++--------------------+
+ Tamaño entrada: 300
+
+ Método: Método de clasificación por Inserción
+ Orden inicial (un solo vector):
+      >  Ascendente: 850800 ns
+      > Descendente: 3572900 ns
+      >   Aleatorio: 911400 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 13034 ns
+      > Descendente: 139418 ns
+      >   Aleatorio: 26132 ns
+
+ Método: Método de clasificación Shellsort
+ Orden inicial (un solo vector):
+      >  Ascendente: 789600 ns
+      > Descendente: 638700 ns
+      >   Aleatorio: 316200 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 71034 ns
+      > Descendente: 32790 ns
+      >   Aleatorio: 52302 ns
+
+ Método: Método de clasificación Burbuja
+ Orden inicial (un solo vector):
+      >  Ascendente: 2399100 ns
+      > Descendente: 1831100 ns
+      >   Aleatorio: 546500 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 349906 ns
+      > Descendente: 66464 ns
+      >   Aleatorio: 101556 ns
+
+ Método: Método de clasificación Quicksort
+ Orden inicial (un solo vector):
+      >  Ascendente: 567800 ns
+      > Descendente: 541000 ns
+      >   Aleatorio: 43200 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 2616 ns
+      > Descendente: 112014 ns
+      >   Aleatorio: 247734 ns
+
+ Método: Método de clasificación por Selección
+ Orden inicial (un solo vector):
+      >  Ascendente: 1799800 ns
+      > Descendente: 1111200 ns
+      >   Aleatorio: 375600 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 145122 ns
+      > Descendente: 58454 ns
+      >   Aleatorio: 29600 ns
+
+ Método: Método de clasificación Heapsort
+ Orden inicial (un solo vector):
+      >  Ascendente: 803600 ns
+      > Descendente: 96600 ns
+      >   Aleatorio: 84900 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 27564 ns
+      > Descendente: 23852 ns
+      >   Aleatorio: 7988 ns
+
++--------------------+
+| OBTENIENDO MEDIDAS |
++--------------------+
+ Tamaño entrada: 3000
+
+ Método: Método de clasificación por Inserción
+ Orden inicial (un solo vector):
+      >  Ascendente: 23900 ns
+      > Descendente: 1783600 ns
+      >   Aleatorio: 886400 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 8262 ns
+      > Descendente: 1830724 ns
+      >   Aleatorio: 863594 ns
+
+ Método: Método de clasificación Shellsort
+ Orden inicial (un solo vector):
+      >  Ascendente: 197100 ns
+      > Descendente: 698100 ns
+      >   Aleatorio: 882400 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 66970 ns
+      > Descendente: 124806 ns
+      >   Aleatorio: 311238 ns
+
+ Método: Método de clasificación Burbuja
+ Orden inicial (un solo vector):
+      >  Ascendente: 1598200 ns
+      > Descendente: 3542100 ns
+      >   Aleatorio: 7612700 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 1547856 ns
+      > Descendente: 3515538 ns
+      >   Aleatorio: 7638136 ns
+
+ Método: Método de clasificación Quicksort
+ Orden inicial (un solo vector):
+      >  Ascendente: 3500 ns
+      > Descendente: 1140800 ns
+      >   Aleatorio: 770300 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 2306 ns
+      > Descendente: 916560 ns
+      >   Aleatorio: 5492554 ns
+
+ Método: Método de clasificación por Selección
+ Orden inicial (un solo vector):
+      >  Ascendente: 1187000 ns
+      > Descendente: 2363900 ns
+      >   Aleatorio: 1373000 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 1168566 ns
+      > Descendente: 2357238 ns
+      >   Aleatorio: 1435146 ns
+
+ Método: Método de clasificación Heapsort
+ Orden inicial (un solo vector):
+      >  Ascendente: 63600 ns
+      > Descendente: 79300 ns
+      >   Aleatorio: 86600 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 50778 ns
+      > Descendente: 74844 ns
+      >   Aleatorio: 37856 ns
+
++--------------------+
+| OBTENIENDO MEDIDAS |
++--------------------+
+ Tamaño entrada: 30000
+
+ Método: Método de clasificación por Inserción
+ Orden inicial (un solo vector):
+      >  Ascendente: 85300 ns
+      > Descendente: 186877100 ns
+      >   Aleatorio: 90964500 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 46572 ns
+      > Descendente: 179668448 ns
+      >   Aleatorio: 87347364 ns
+
+ Método: Método de clasificación Shellsort
+ Orden inicial (un solo vector):
+      >  Ascendente: 461000 ns
+      > Descendente: 9303200 ns
+      >   Aleatorio: 7282500 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 325588 ns
+      > Descendente: 9105318 ns
+      >   Aleatorio: 7474490 ns
+
+ Método: Método de clasificación Burbuja
+ Orden inicial (un solo vector):
+      >  Ascendente: 154312200 ns
+      > Descendente: 344808200 ns
+      >   Aleatorio: 1127866000 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 153428710 ns
+      > Descendente: 343366838 ns
+      >   Aleatorio: 1163279766 ns
+
+ Método: Método de clasificación Quicksort
+ Orden inicial (un solo vector):
+      >  Ascendente: 20300 ns
+      > Descendente: 71191300 ns
+      >   Aleatorio: 724228400 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 21980 ns
+      > Descendente: 70348832 ns
+      >   Aleatorio: 835427622 ns
+
+ Método: Método de clasificación por Selección
+ Orden inicial (un solo vector):
+      >  Ascendente: 114717300 ns
+      > Descendente: 237185800 ns
+      >   Aleatorio: 117553900 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 116232426 ns
+      > Descendente: 232766738 ns
+      >   Aleatorio: 118812212 ns
+
+ Método: Método de clasificación Heapsort
+ Orden inicial (un solo vector):
+      >  Ascendente: 130100 ns
+      > Descendente: 167300 ns
+      >   Aleatorio: 329500 ns
+ Promedio con conjunto de 50 vectores
+      >  Ascendente: 131600 ns
+      > Descendente: 159708 ns
+      >   Aleatorio: 230036 ns
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  02:53 min
+Finished at: 2022-08-27T00:59:22-03:00
+------------------------------------------------------------------------

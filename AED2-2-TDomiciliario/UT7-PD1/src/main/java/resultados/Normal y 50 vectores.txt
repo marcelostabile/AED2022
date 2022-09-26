@@ -1,0 +1,2 @@
+
+Ejecusión Normal y con 50 vectores.
