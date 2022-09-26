@@ -1,4 +1,4 @@
-package metodos;
+package aed2.metodos;
 /**
  * @author Marcelo Stabile 2022.
  */

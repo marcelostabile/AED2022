@@ -2,7 +2,7 @@ package aed2.clasificador;
 
 import java.util.LinkedList;
 import java.util.List;
-import metodos.*;
+import aed2.metodos.*;
 
 public class TClasificador
 {

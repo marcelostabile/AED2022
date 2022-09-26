@@ -1,4 +1,4 @@
-package metodos;
+package aed2.metodos;
 /**
  * @author Marcelo Stabile 2022.
  */
@@ -16,20 +16,25 @@ public class Quicksort_ver1 {
         // Si el arregloDatos está vacío o nulo, retorna nulo.
         if (arregloDatos != null | arregloDatos.length==0 ) {
 
-            int cursorIzq = i;
-            int cursorDer = j;
-            // Determinamos el pivote.
+            // Determinar el pivote.
             int indicePivote = encontrarPivote(arregloDatos, i, j);
             int pivote = arregloDatos[indicePivote];
 
+            // Ordenar el arreglo.
+            int cursorIzq = i;
+            int cursorDer = j;
+
             while (cursorIzq <= cursorDer) {
 
+                System.out.println("IZQ: " + cursorIzq + ", DER: " + cursorDer);
+                
                 // Avanza CursorIzq mientras no llegue al pivote o al otro cursor.
                 while (arregloDatos[cursorIzq] < pivote && cursorIzq < j) {
                     cursorIzq++;
                 }
+                
                 // Retrocede CursorDer mientras no llegue al pivote o al otro cursor.
-                while (arregloDatos[cursorDer] > pivote && cursorDer > i) {
+                while (pivote < arregloDatos[cursorDer] && cursorDer > i) {
                     cursorDer--;
                 }
 
@@ -39,12 +44,13 @@ public class Quicksort_ver1 {
                     cursorIzq++;
                     cursorDer--;
                 }
+                
                 // Recursivamente ordenamos subarreglo 1.
                 if (i < cursorDer) {
                     ordenarPorQuicksort(arregloDatos, i, cursorIzq-1);
                 }
                 // Recursivamente ordenamos subarreglo 2.
-                if (cursorIzq > j) {
+                if (cursorIzq < j) {
                     ordenarPorQuicksort(arregloDatos, cursorIzq, j);
                 }
             }
@@ -61,7 +67,13 @@ public class Quicksort_ver1 {
      */
     private static int encontrarPivote(int[] arregloDatos, int cursorIzq, int cursorDer) {
 
-        return (cursorDer - cursorIzq) / 2 + cursorIzq;
+        int mediana;
+        if ((cursorDer - cursorIzq) % 2 == 0) {
+            mediana = (cursorDer - cursorIzq) / 2;
+        } else {
+            mediana = (cursorDer - cursorIzq -1) / 2;
+        }
+        return mediana;
     }
     
 }

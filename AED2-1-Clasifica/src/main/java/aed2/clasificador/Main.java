@@ -46,7 +46,7 @@ public class Main {
     public static void main(String[] args) {
         
         // Procedimiento 1
-        obtenerMedidas(300, 100);
+        obtenerMedidas(100, 100);
         obtenerMedidas(3000, 100);
         obtenerMedidas(30000, 100);
         
