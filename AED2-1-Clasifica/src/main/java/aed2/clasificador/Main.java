@@ -48,7 +48,7 @@ public class Main {
         // Procedimiento 1
         obtenerMedidas(100, 100);
         obtenerMedidas(3000, 100);
-        obtenerMedidas(30000, 100);
+        obtenerMedidas(15000, 100);
         
         // Procedimiento 2 noCascara = true
         
