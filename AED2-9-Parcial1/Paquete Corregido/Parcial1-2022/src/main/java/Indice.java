@@ -43,7 +43,7 @@ public class Indice {
         
         for (int lineaNro = 0; lineaNro <= libro.length-1; lineaNro++) {
             // Procesmos la linea.
-            String lineaStr = libro[lineaNro].toString();
+            String lineaStr = libro[lineaNro];
             String[] lineaArr = lineaStr.split(" ");
             // Obtenemos nro de página.
             int paginaNro = lineaNro/50;
@@ -59,6 +59,15 @@ public class Indice {
         
         // IMPRIMIR INDICE CON PALABRA, OCURRENCIAS, PAGINAS.
         trieIndice.imprimir();
+        
+        // LISTAR TODOS LOS REGISTROS.
+        String[] salida = trieIndice.listarRegistros();
+        ManejadorArchivosGenerico.escribirArchivo("src\\main\\java\\salidaDatos.txt", salida);
+        
+        // CANTIDAD DE REGISTROS.
+        String[] cantidad = {"Total de Registros: " + Integer.toString(salida.length) };
+        ManejadorArchivosGenerico.escribirArchivo("src\\main\\java\\salidaDatos.txt", cantidad);
+
     }
 
 }

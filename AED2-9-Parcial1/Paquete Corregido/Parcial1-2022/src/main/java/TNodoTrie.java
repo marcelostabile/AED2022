@@ -75,8 +75,7 @@ public class TNodoTrie {
     private void imprimir(String s, TNodoTrie nodo) {
         if (nodo != null) {
             if (nodo.esPalabra) {
-                System.out.println(s);
-                System.out.println("Ocurrencias: " + nodo.getOcurrencias() + " / Pagínas: " + nodo.getPaginas().toString());
+                System.out.println(s + " - Ocurrencias: " + nodo.getOcurrencias() + " - Pagínas: " + nodo.getPaginas().toString());
             }
             for (int c = 0; c < CANT_CHR_ABECEDARIO; c++) {
                 if (nodo.hijos[c] != null) {
@@ -89,4 +88,30 @@ public class TNodoTrie {
     public int getOcurrencias() {
         return this.ocurrencias;
     }
+    
+    public String[] listar() {
+        
+        // Lista de datos.
+        LinkedList<String> listaDatos = new LinkedList<>();
+        listar("", this, listaDatos);
+        // Convertir LinkedList to Arreglo
+        String[] arregloDatos = new String[listaDatos.size()];
+        return listaDatos.toArray(arregloDatos);
+    }
+    
+    private void listar(String s, TNodoTrie nodo, LinkedList<String> listaDatos) {
+
+        if (nodo != null) {
+            if (nodo.esPalabra) {
+                String palabra = (s + " - Ocurrencias: " + nodo.getOcurrencias() + " - Paginas: " + nodo.getPaginas().toString());
+                listaDatos.add(palabra);
+            }
+            for (int c = 0; c < CANT_CHR_ABECEDARIO; c++) {
+                if (nodo.hijos[c] != null) {
+                    listar(s + (char) (c + 'a'), nodo.hijos[c], listaDatos);
+                }
+            }
+        }
+    }
+
 }

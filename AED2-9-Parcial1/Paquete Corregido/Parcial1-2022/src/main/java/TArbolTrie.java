@@ -25,4 +25,8 @@ public class TArbolTrie {
         raiz.imprimir();
     }
     
+    public String[] listarRegistros() {
+        return raiz.listar();
+    }
+    
 }
